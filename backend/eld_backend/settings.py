@@ -68,5 +68,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Dev CORS
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-  "https://spotter-task.vercel.app",
+  "https://eld-route-logger.vercel.app/",
 ]
