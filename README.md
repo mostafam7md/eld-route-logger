@@ -41,8 +41,3 @@ Body example:
   "avg_speed_mph": 62
 }
 ```
-
-## Notes / Improvements
-- The paper log field coordinates are *approximate* and can be fine-tuned in `frontend/src/components/ELDCanvas.tsx`
-- For better stop city/state labels, you can add reverse geocoding (Nominatim) or use a paid geocoder.
-- You can merge the two route legs into a single polyline and add markers for stops.
