@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -52,9 +53,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "eld_backend.wsgi.application"
 
 
-
-# Railway gives DATABASE_URL when you add Postgres
-import dj_database_url
 DATABASES = {
     "default": dj_database_url.config(default=str(BASE_DIR / "db.sqlite3"))
 }
@@ -70,7 +68,8 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
-  "https://eld-route-logger.vercel.app",
+    os.getenv("FRONTEND_ORIGIN", "https://eld-route-logger.vercel.app")
 ]
+
+CORS_ALLOW_CREDENTIALS = False
